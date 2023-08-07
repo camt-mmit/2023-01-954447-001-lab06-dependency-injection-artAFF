@@ -1,4 +1,4 @@
-import { Component, Inject } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SectionData } from '../../types';
 import { ExampleDataService } from '../../example-data.service';
@@ -12,7 +12,7 @@ import { DynamicSectionComponent } from '../../dynamic-section/dynamic-section.c
   styleUrls: ['./example-input.component.scss'],
 })
 export class ExampleInputComponent {
-  protected readonly dataService = Inject(ExampleDataService);
+  protected readonly dataService = inject(ExampleDataService);
 
   protected data$ = this.dataService.getData();
 

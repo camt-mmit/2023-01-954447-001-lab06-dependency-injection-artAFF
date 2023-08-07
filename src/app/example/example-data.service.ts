@@ -14,8 +14,8 @@ export class ExampleDataService {
     return result;
   }
 
-  async SectionData(data: SectionData): Promise<void> {
+  async setData(data: SectionData): Promise<void> {
     const result = data.map((ar) => ar.map((item) => item.value));
-    localStorage.setItem(keyName, JSON.stringify(data));
+    localStorage.setItem(keyName, JSON.stringify(result));
   }
 }
