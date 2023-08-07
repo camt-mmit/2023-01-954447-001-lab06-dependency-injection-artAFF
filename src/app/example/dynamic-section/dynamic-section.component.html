@@ -1,0 +1,16 @@
+<div class="cmp-action-bar">
+  <button type="button" claas="cl-primary" (click)="add()">
+    <i class="material-symbols-outlined">add</i>
+  </button>
+</div>
+
+<div *ngIf="items" class="cmp-sections-list">
+  <app-dynamic-input
+    *ngFor="let item of items; let i = index"
+    [section]="i + 1"
+    [items]="item"
+    [nonDeletable]="items.length === 1"
+    (deleteSelf)="delete(i)"
+    (dataChange)="OnDataChange()"
+  />
+</div>
